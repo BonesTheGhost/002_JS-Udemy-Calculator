@@ -22,7 +22,7 @@ function addToPrevious() {
   const initialResult = currentResult;
 
   //This performs the math operation for the function.
-  currentResult = currentResult + enteredNumber;
+  currentResult += enteredNumber;
 
   //This calls the function for outputting the log of the previous number, the operation,
   // and the current number the user input.
@@ -32,21 +32,21 @@ function addToPrevious() {
 function subtractFromPrevious() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult - enteredNumber;
+  currentResult -= enteredNumber;
   createAndOutputLog("-", initialResult, currentResult)
 };
 
 function multiplyWithPrevious() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult * enteredNumber;
+  currentResult *= enteredNumber;
   createAndOutputLog("*", initialResult, currentResult)
 };
 
 function dividePrevious() {
   const enteredNumber = getUserNumberInput();
   const initialResult = currentResult;
-  currentResult = currentResult / enteredNumber;
+  currentResult /= enteredNumber;
   createAndOutputLog("/", initialResult, currentResult)
 };
 
