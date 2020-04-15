@@ -1,22 +1,71 @@
 console.log("[SCRIPT]:: 'app.js' connected.");
 const defaultResult = 0;
-
 let currentResult = defaultResult;
-let calculationDescription = `${currentResult} is an integer`;
-let currentResult = addToDefault(defaultNum, userEnteredNum);
 
+//This was refactored to be a separate function since we perform this for each operation.
+function getUserNumberInput() {
+  return parseInt(userInput.value);
+}
 
+//This was refactored since again, we perform this at the end of each operation.
+function createAndOutputLog(operator, resultBeforeCalc, calcNumber) {
+  const calcDescription = `${resultBeforeCalc} ${operator} ${calcNumber}`;
+  outputResult(currentResult, calcDescription);
+}
 
-outputResult(currentResult, calculationDescription);
-
-addBtn.addEventListener("click", addToPrevious);
-
+//The math operation template function. (Refactored)
 function addToPrevious() {
-  currentResult = currentResult + userInput.value;
+  //This calls the function for retrieving the user input and converting it to an INT.
+  const enteredNumber = getUserNumberInput();
+
+  //Stores the last currentResult.
+  const initialResult = currentResult;
+
+  //This performs the math operation for the function.
+  currentResult = currentResult + enteredNumber;
+
+  //This calls the function for outputting the log of the previous number, the operation,
+  // and the current number the user input.
+  createAndOutputLog("+", initialResult, currentResult)
 };
 
-/* We modified the addition function to get its values NOT from arguments passed in 
-but from a global variable and a user input field. The global variable is then updated
-right away so that the value can be passed back out without the need to return it. All
-of this is done so that we can manipulate data with vanilla JavaScript and use events
-where we cannot simply take data back while we add an event listener.*/ 
+function subtractFromPrevious() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult - enteredNumber;
+  createAndOutputLog("-", initialResult, currentResult)
+};
+
+function multiplyWithPrevious() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult * enteredNumber;
+  createAndOutputLog("*", initialResult, currentResult)
+};
+
+function dividePrevious() {
+  const enteredNumber = getUserNumberInput();
+  const initialResult = currentResult;
+  currentResult = currentResult / enteredNumber;
+  createAndOutputLog("/", initialResult, currentResult)
+};
+
+
+
+addBtn.addEventListener("click", addToPrevious);
+subtractBtn.addEventListener("click", subtractFromPrevious);
+multiplyBtn.addEventListener("click", multiplyWithPrevious);
+divideBtn.addEventListener("click", dividePrevious);
+
+/*
+This small application is a rich learning experience. It shows that with clever
+variable usage and the correct formatting: (`${}`) that you can store small amounts of
+older data within variables, thus not requiring an elaborate array or object. This allows
+us to store a "log" almost of the values previously inputted as we are updating the
+variables to accommodate the new inputs.
+
+The event Listeners are also a quality refresh in paying attention to nuance with
+function calls, as we are not calling them when the code is parsed by including
+the "()", but simply REFERENCING them with the function name inside of the
+event listener.
+*/
