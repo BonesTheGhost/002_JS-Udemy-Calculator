@@ -14,6 +14,22 @@ function createAndOutputLog(operator, resultBeforeCalc, calcNumber) {
   outputResult(currentResult, calcDescription);
 }
 
+function writeToLog(
+  operatorIdentifier, 
+  prevResult, 
+  operationNumber, 
+  newResult
+  ) {
+    const logEntry = {
+      operation: operatorIdentifier,
+      prevResult: prevResult,
+      newNumber: operationNumber,
+      newResult: newResult
+    };
+    inputLog.push(logEntry);
+    console.log(inputLog);
+}
+
 //The math operation template function. (Refactored)
 function addToPrevious() {
   //This calls the function for retrieving the user input and converting it to an INT.
@@ -29,7 +45,7 @@ function addToPrevious() {
   // and the current number the user input.
   createAndOutputLog("+", initialResult, currentResult)
 
-  inputLog.append(enteredNumber);
+  writeToLog("ADD", initialResult, enteredNumber, currentResult);
 };
 
 function subtractFromPrevious() {
@@ -37,6 +53,8 @@ function subtractFromPrevious() {
   const initialResult = currentResult;
   currentResult -= enteredNumber;
   createAndOutputLog("-", initialResult, currentResult)
+
+  writeToLog("SUBTRACT", initialResult, enteredNumber, currentResult);
 };
 
 function multiplyWithPrevious() {
@@ -44,6 +62,8 @@ function multiplyWithPrevious() {
   const initialResult = currentResult;
   currentResult *= enteredNumber;
   createAndOutputLog("*", initialResult, currentResult)
+
+  writeToLog("MULTIPLY", initialResult, enteredNumber, currentResult);
 };
 
 function dividePrevious() {
@@ -51,6 +71,8 @@ function dividePrevious() {
   const initialResult = currentResult;
   currentResult /= enteredNumber;
   createAndOutputLog("/", initialResult, currentResult)
+
+  writeToLog("DIVIDE", initialResult, enteredNumber, currentResult);
 };
 
 

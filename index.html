@@ -5,11 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Basics</title>
+
     <link
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="assets/styles/app.css" />
+
+    <!--"defer" is used to download the scripts first to reduce latency,
+    but the scripts don't execute until AFTER the HTML is parsed. This matters
+    way more if the site were to be served on a server (as opposed to locally like here).-->
+    <script src="assets/scripts/vendor.js" defer></script>
+    <script src="assets/scripts/app.js" defer></script>
   </head>
   <body>
     <header>
@@ -30,10 +38,5 @@
       <h2>Result: <span id="current-result">0</span></h2>
     </section>
   </body>
-
-  <!--These go AFTER the closing body tag to allow the page to load
-  before the alert kicks in. ALSO, the order matters since 'app.js' contains
-  dependencies of 'vendor.js'.-->
-  <script src="assets/scripts/vendor.js"></script>
-  <script src="assets/scripts/app.js"></script>
+  
 </html>

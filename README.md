@@ -1,4 +1,18 @@
+============================================================== 
+April 16th 2020::
 
+Updated the project to make use of objects for keeping a running log of the inputs to the program. These inputs can be viewed in the console.
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ Progress to this point:
+
++ Refreshed objects, and 'dot notation'.
++ Learned about the differences between the 'async' and 'defer' properties of the script tag. Attempted to view the realistic differences of the properties in the performance tab of developer tools in Chrome, but due to the site being served locally the changes can only be recognized on a conceptual level at the moment.
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+= Log now keeps track of the inputs more clearly, and scripts are attached more efficiently with 'defer'.
+
+==============================================================
 ============================================================== 
 April 15th 2020::
 
