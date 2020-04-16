@@ -1,6 +1,24 @@
 
+============================================================== 
+April 15th 2020::
 
-============================================================== April 9th 2020::
+Project complete!
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ Progress to this point:
+
++ Refreshed 'shorthand operators (+=, -=, *=, /=)
++ Learned that ++ and -- return different values depending on if they are called before or after the incremented/decremented variable.
++ Went through the process of refactoring the functions alongside Max; it provided a glimpse into how a professional thinks about trimming the fat out of a program.
++ Refreshed hooking up scripting to front-end components like buttons and input fields.
++Learned how to create a program that functions in a mature way WITHOUT the use of arrays or more powerful data structures like objects.
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+
+= The program now works as intended. The buttons all work, the small "log" keeps track of input operations, and the values update as expected. There is no input validation, however that was beyond the scope of this tutorial project and thus I will be moving on to the next parts of the course.
+
+==============================================================
+============================================================== 
+April 9th 2020::
 
 This is the intro application for getting a handle on the basic syntax and conventions of JavaScript in 2020. I am about 4 hours into the course at this point as this course was started in tandem with the C++ Unreal Udemy course, and several other courses as well.
 

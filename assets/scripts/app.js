@@ -1,6 +1,7 @@
 console.log("[SCRIPT]:: 'app.js' connected.");
 const defaultResult = 0;
 let currentResult = defaultResult;
+let inputLog = [];
 
 //This was refactored to be a separate function since we perform this for each operation.
 function getUserNumberInput() {
@@ -27,6 +28,8 @@ function addToPrevious() {
   //This calls the function for outputting the log of the previous number, the operation,
   // and the current number the user input.
   createAndOutputLog("+", initialResult, currentResult)
+
+  inputLog.append(enteredNumber);
 };
 
 function subtractFromPrevious() {
